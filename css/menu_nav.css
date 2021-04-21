@@ -1,0 +1,234 @@
+* {
+	padding:0;
+	margin:0;
+	scroll-behavior: smooth;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+ 	body {
+ 		background:#FEFEFE;
+ 		padding-top: 60px;
+
+	}
+
+ 
+.menu_bar {
+	display:none;
+}
+ 
+header {
+	width: 100%;
+}
+ 
+header nav {
+	background:#fff;
+	z-index:1000;
+
+	width:100%;
+	margin:0px auto 5px auto;
+	position: fixed;
+	top: 0;
+	border-bottom: 2px solid #f3f3f3;
+
+
+}
+ 
+header nav ul {
+	list-style:none;
+}
+ 
+header nav ul li {
+	display:inline-block;
+	position: relative;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.log{
+	font-family: 'Raleway', sans-serif;
+}
+ 
+header nav ul li:hover {
+	background-color: #f2f2f2;
+	/*border: 1px solid #000;*/
+	transform: scale(1.1);
+}
+
+.logo{
+	box-sizing: content-box;
+	height: 39px;
+	width: 150px;
+/*	display:flex;*/
+/*	align-items: center;*/
+	display: inline-block;
+	margin-left: 20px;
+	padding-top: 5px;
+}
+ 
+header nav ul li a {
+	color:#000;
+	display:block;
+	text-decoration:none;
+	padding: 20px;
+}
+ 
+header nav ul li a span {
+	margin-right:10px;
+}
+ 
+@media screen and (min-width: 828px) {
+	header nav ul li:hover .children {
+	display:block;
+}
+	}
+
+
+ /* En CSS si quieres hacer súbmenús, los elementos padres tienen que tener 
+ un position: relative; y los hijos position: absolute; */
+header nav ul li .children {
+	display: none;
+	background:#f2f2f2;
+	position: absolute;
+	width: 150%;
+	z-index:1000; /* Sirve para que los textos no se superpongan (para que no se
+	coloquen los textos de submenus encima de los del menu al
+	 desplegar menus y no se entienda nada )*/
+}
+ 
+header nav ul li .children li {
+	display:block;
+	overflow: hidden;
+	border-bottom: 1px solid rgba(255,255,255,.5);
+}
+ 
+header nav ul li .children li a {
+	display: block;
+}
+ 
+header nav ul li .children li a span {
+	float: right;
+	position: relative;
+	top:3px;
+	margin-right:0;
+	margin-left:10px;
+}
+ 
+header nav ul li .caret {
+	position: relative;
+	top:3px;
+	margin-left:10px;
+	margin-right:0px;
+}
+ 
+@media screen and (max-width: 827px) {
+	body {
+		padding-top:84px;
+	}
+ 
+	.menu_bar {
+		display:block;
+		width:100%;
+		position: fixed;
+		top:0;
+		background:#f2f2f2;
+	}
+ 
+	.menu_bar .bt-menu {
+		display: block;
+		padding: 20px;
+		color: #000;
+		overflow: hidden;
+		font-size: 25px;
+		font-weight: bold;
+		text-decoration: none;
+	}
+ 
+	.menu_bar span {
+		float: right;
+		font-size: 40px;
+	}
+ 
+	header nav {
+		width: 80%;
+		height: calc(100% - 50px);
+		position: fixed;
+		right:100%;
+		margin: 0;
+		overflow: scroll;
+	}
+ 
+	header nav ul li {
+		display: block;
+		border-bottom:1px solid rgba(0,0,0,.3);
+	}
+ 
+	header nav ul li a {
+		display: block;
+	}
+ 
+	header nav ul li:hover .children {
+		
+	}
+
+	header nav ul li .hijo {
+		display: inline-block;
+	}
+ 
+	header nav ul li .children {
+		width: 100%;
+		position: relative;
+	}
+ 
+	header nav ul li .children li a {
+		margin-left:20px;
+	}
+ 
+	header nav ul li .caret {
+		float: right;
+	}
+
+	.mostrar{
+	animation: mostrar 0.8s ease;
+}
+
+@keyframes mostrar {
+	0% {left: -100%;}
+	10% {left: -90%;}
+	20% {left: -80%;}
+	30% {left: -70%;}
+	40% {left: -60%;}
+	50% {left: -50%;}
+	60% {left: -40%;}
+	70% {left: -30%;}
+	80% {left: -20%;}
+	90% {left: -10%;}
+	100% {left: 0;}
+}
+.mostrar{
+	left: 0;
+}
+.ocultar{
+	animation: ocultar 1s ease;
+}
+
+@keyframes ocultar {
+	0% {left: 0;}
+	10% {left: -10%;}
+	20% {left: -20%;}
+	30% {left: -30%;}
+	40% {left: -40%;}
+	50% {left: -50%;}
+	60% {left: -60%;}
+	70% {left: -70%;}
+	80% {left: -80%;}
+	90% {left: -90%;}
+	100% {left: -100%;}
+}
+.ocultar{
+	left: -100%;
+}
+
+}
+
